@@ -1,0 +1,55 @@
+[
+  {
+    "ContainingType": "Minha_primeira_API.Controller.ProductsController",
+    "Method": "GetByIdAsync",
+    "RelativePath": "v1/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minha_primeira_API.Controller.ProductsController",
+    "Method": "UpdateByIdAsync",
+    "RelativePath": "v1/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "newproductc",
+        "Type": "Minha_primeira_API.Models.Products",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minha_primeira_API.Controller.ProductsController",
+    "Method": "CreateProductAsync",
+    "RelativePath": "v1/products",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "products",
+        "Type": "Minha_primeira_API.Models.Products",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
