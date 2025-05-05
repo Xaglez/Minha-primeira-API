@@ -29,7 +29,7 @@ Este projeto é uma API RESTful desenvolvida com **ASP.NET Core**, conectada a u
 
 ### Passos
 
-1. Clone o repositório:
+1. 
 
 ```bash
 git clone https://github.com/Xaglez/Minha-primeira-API.git
