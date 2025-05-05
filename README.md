@@ -29,43 +29,37 @@ Este projeto é uma API RESTful desenvolvida com **ASP.NET Core**, conectada a u
 
 ### Passos
 
-1. 
+1. Clone o repositório:
 
 ```bash
 git clone https://github.com/Xaglez/Minha-primeira-API.git
+````
 
-Acesse a pasta do projeto:
+2. Clone o repositório:
 
-bash
-Copiar
-Editar
+````bash
 cd Minha-primeira-API
-Configure a connection string em appsettings.json com os dados do seu SQL Server:
-
-json
-Copiar
-Editar
+````
+3. Configure a connection string em appsettings.json com os dados do seu SGBD:
+   
+````json
 "ConnectionStrings": {
   "DefaultConnection": "Server=SEU_SERVIDOR;Database=NOME_DO_BANCO;Trusted_Connection=True;TrustServerCertificate=True;"
 }
-Execute as migrações (se estiver usando EF Core):
-
-bash
-Copiar
-Editar
+````
+4. Execute as migrações (se estiver usando EF Core):
+````bash
 dotnet ef database update
-Rode o projeto:
-
-bash
-Copiar
-Editar
+````
+5. Rode o projeto:
+````bash
 dotnet run
-Acesse o Swagger no navegador:
-
-bash
-Copiar
-Editar
+````
+6. Acesse o Swagger no navegador:
+````bash
 https://localhost:PORT/swagger
+````
+
 🛠 Em desenvolvimento
 Este projeto está em constante aprimoramento. Próximas implementações planejadas:
 
