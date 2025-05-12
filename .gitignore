@@ -1,0 +1,18 @@
+# Ignore arquivos e pastas específicos do Visual Studio
+*.vs/
+*.vscode/
+*.idea/
+
+# Ignore arquivos binários e de build
+*bin/
+*obj/
+
+# Ignore arquivos de usuário
+*.user
+*.userosscache
+*.suo
+*.vspscc
+*.vssscc
+
+# Ignore arquivos de índice do Visual Studio
+*.vsidx
