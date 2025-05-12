@@ -35,8 +35,8 @@ namespace Minha_primeira_API.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("double precision");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("numeric");
 
                     b.Property<int>("Stock")
                         .HasColumnType("integer");

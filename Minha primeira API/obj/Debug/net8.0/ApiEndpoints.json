@@ -38,6 +38,22 @@
   },
   {
     "ContainingType": "Minha_primeira_API.Controller.ProductsController",
+    "Method": "DeleteByIdAsync",
+    "RelativePath": "v1/id",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minha_primeira_API.Controller.ProductsController",
     "Method": "CreateProductAsync",
     "RelativePath": "v1/products",
     "HttpMethod": "POST",

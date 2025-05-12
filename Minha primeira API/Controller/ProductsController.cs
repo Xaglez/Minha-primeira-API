@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Minha_primeira_API.Data;
 using Minha_primeira_API.Models;
+using Minha_primeira_API.Services;
 
 namespace Minha_primeira_API.Controller
 {
@@ -9,11 +9,11 @@ namespace Minha_primeira_API.Controller
     [Route("v1")]
     public class ProductsController : ControllerBase
     {
-        private readonly DbContext _dbContext;
+        private readonly IProductService _productService;
 
-        public ProductsController(AppDbContext appDb) {
+        public ProductsController(IProductService productService) {
 
-            _dbContext = appDb;
+            _productService = productService;
 
         }
 
@@ -21,76 +21,38 @@ namespace Minha_primeira_API.Controller
         [Route ("products")]
         public async Task<IActionResult> CreateProductAsync([FromBody]Products products)
         {
-            if (products == null)
+            try
             {
-                return BadRequest ("Produto vazio");
+                await _productService.CreateProductAsync(products);
+                return Ok(products);
             }
-
-            _dbContext.Add(products);
-
-            await _dbContext.SaveChangesAsync();
-
-            return Ok();
+            catch
+            {
+                return BadRequest("Produto vazio");
+            }
+            
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var product = await _dbContext.Set<Products>().FindAsync(id);
+            var product = await _productService.GetByIdAsync(id);
 
-            if ( product == null)
-            {
-                return BadRequest("O produto não existe!");
-            }
-
-            var productResponse = new
-            {
-                product.Id,
-                product.Stock,
-                product.Name,
-                product.Category,
-                product.Price
-            };
-
-            return Ok(productResponse);
+            return Ok(product);
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateByIdAsync(int id, [FromBody] Products newproductc)
         {
-            if (newproductc == null)
-            {
-                return BadRequest("Produto vazio");
-            }
+            await _productService.UpdateByIdAsync(id, newproductc);
 
-            var product = await _dbContext.Set<Products>().FindAsync(id);
-
-            if (product == null)
-            {
-                return NotFound("Produto não encontrado");
-            }
-
-            product.Name = newproductc.Name;
-            product.Stock = newproductc.Stock;
-            product.Price = newproductc.Price;
-            product.Category = newproductc.Category;
-
-            await _dbContext.SaveChangesAsync();
             return NoContent();
         }
 
         [HttpDelete("id")]
         public async Task<IActionResult> DeleteByIdAsync(int id)
         {
-            var product = await _dbContext.Set<Products>().FindAsync(id);
-
-            if (product == null)
-            {
-                return NotFound("Produto não encontrado");
-            }
-
-            _dbContext.Set<Products>().Remove(product);
-            await _dbContext.SaveChangesAsync();
+            await _productService.DeleteByIdAsync(id);
 
             return NoContent();
         }
