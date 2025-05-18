@@ -8,12 +8,12 @@ namespace Minha_primeira_API.Services
 {
     public class ProductService : IProductService
     {
-        private readonly IProductRepository _productRepositori;
+        private readonly IProductRepository _productRepository;
 
-        public ProductService(IProductRepository productRepositori)
+        public ProductService(IProductRepository productRepository)
         {
 
-            _productRepositori = productRepositori;
+            _productRepository = productRepository;
         }
 
         public async Task CreateProductAsync(Products products)
@@ -23,25 +23,25 @@ namespace Minha_primeira_API.Services
                 throw new Exception("Produto vazio");
             }
 
-            await _productRepositori.CreateProductAsync(products);
+            await _productRepository.CreateProductAsync(products);
 
         }
 
         public async Task DeleteByIdAsync(int id)
         {
-            var product = await _productRepositori.GetByIdAsync(id);
+            var product = await _productRepository.GetByIdAsync(id);
 
             if (product == null)
             {
                 throw new Exception("Produto não encontrado");
             }
 
-            await _productRepositori.DeleteByIdAsync(product);
+            await _productRepository.DeleteByIdAsync(product);
         }
 
         public async Task<ProductDTO> GetByIdAsync(int id)
         {
-            var product = await _productRepositori.GetByIdAsync(id);
+            var product = await _productRepository.GetByIdAsync(id);
 
             if (product == null)
             {
@@ -67,14 +67,14 @@ namespace Minha_primeira_API.Services
                 throw new Exception("Produto vazio");
             }
 
-            var product = await _productRepositori.GetByIdAsync(id);
+            var product = await _productRepository.GetByIdAsync(id);
 
             if (product == null)
             {
                 throw new Exception("Produto não encontrado");
             }
 
-            await _productRepositori.UpdateByIdAsync(id, newproductc);
+            await _productRepository.UpdateByIdAsync(id, newproductc);
         }
     }
 }

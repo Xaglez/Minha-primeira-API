@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Minha_primeira_API.Models;
 using Minha_primeira_API.Services;
@@ -6,19 +7,19 @@ using Minha_primeira_API.Services;
 namespace Minha_primeira_API.Controller
 {
     [ApiController]
-    [Route("v1")]
+    [Route("products")]
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
 
-        public ProductsController(IProductService productService) {
-
+        public ProductsController(IProductService productService)
+        {
             _productService = productService;
-
         }
 
+        [Authorize(Policy = "AdminPolicy")]
         [HttpPost]
-        [Route ("products")]
+        [Route ("createProducts")]
         public async Task<IActionResult> CreateProductAsync([FromBody]Products products)
         {
             try
@@ -41,6 +42,7 @@ namespace Minha_primeira_API.Controller
             return Ok(product);
         }
 
+        [Authorize(Policy = "AdminPolicy")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateByIdAsync(int id, [FromBody] Products newproductc)
         {
@@ -49,7 +51,8 @@ namespace Minha_primeira_API.Controller
             return NoContent();
         }
 
-        [HttpDelete("id")]
+        [Authorize(Policy = "AdminPolicy")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteByIdAsync(int id)
         {
             await _productService.DeleteByIdAsync(id);

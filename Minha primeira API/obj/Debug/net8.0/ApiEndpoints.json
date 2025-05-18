@@ -2,7 +2,7 @@
   {
     "ContainingType": "Minha_primeira_API.Controller.ProductsController",
     "Method": "GetByIdAsync",
-    "RelativePath": "v1/{id}",
+    "RelativePath": "products/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "Minha_primeira_API.Controller.ProductsController",
     "Method": "UpdateByIdAsync",
-    "RelativePath": "v1/{id}",
+    "RelativePath": "products/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -39,7 +39,7 @@
   {
     "ContainingType": "Minha_primeira_API.Controller.ProductsController",
     "Method": "DeleteByIdAsync",
-    "RelativePath": "v1/id",
+    "RelativePath": "products/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -47,7 +47,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -55,7 +55,7 @@
   {
     "ContainingType": "Minha_primeira_API.Controller.ProductsController",
     "Method": "CreateProductAsync",
-    "RelativePath": "v1/products",
+    "RelativePath": "products/createProducts",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -66,6 +66,101 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minha_primeira_API.Controller.UsersController",
+    "Method": "GetByIdAsync",
+    "RelativePath": "Users/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minha_primeira_API.Controller.UsersController",
+    "Method": "UpdateByIdAsync",
+    "RelativePath": "Users/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "newUser",
+        "Type": "Minha_primeira_API.Models.Users",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minha_primeira_API.Controller.UsersController",
+    "Method": "DeleteByIdAsync",
+    "RelativePath": "Users/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minha_primeira_API.Controller.UsersController",
+    "Method": "CreateUserAsync",
+    "RelativePath": "Users/createusers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Minha_primeira_API.Models.Users",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minha_primeira_API.Controller.UsersController",
+    "Method": "Login",
+    "RelativePath": "Users/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Minha_primeira_API.Models.Users",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minha_primeira_API.Controller.UsersController",
+    "Method": "GetProfile",
+    "RelativePath": "Users/profile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

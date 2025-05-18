@@ -6,7 +6,9 @@ C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Minha primeira API.runtimeconfig.json
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Minha primeira API.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Minha primeira API.pdb
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\DotEnv.Core.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Humanizer.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.Build.Locator.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -25,10 +27,19 @@ C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\Npgsql.dll
@@ -43,9 +54,13 @@ C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\System.Composition.Runtime.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\System.Composition.TypedParts.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\es\DotEnv.Core.resources.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -111,6 +126,7 @@ C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\Minha primeira API.csproj.AssemblyReference.cache
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\Minha primeira API.GeneratedMSBuildEditorConfig.editorconfig
