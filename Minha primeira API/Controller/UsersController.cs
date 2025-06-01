@@ -25,6 +25,18 @@ namespace Minha_primeira_API.Controller
             return Ok(new { message = "Acesso autorizado!" });
         }
 
+        [Authorize (Policy = "AdminPolicy")]
+        [HttpGet("listusers")]
+        public async Task<IActionResult> GetAllAsync()
+        {
+            var users = await _usersService.GetAllAsync();
+            if (users == null || !users.Any())
+            {
+                return NotFound("Nenhum usuário encontrado.");
+            }
+            return Ok(users);
+        }
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] Users model)
         {

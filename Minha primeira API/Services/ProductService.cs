@@ -39,6 +39,12 @@ namespace Minha_primeira_API.Services
             await _productRepository.DeleteByIdAsync(product);
         }
 
+        public async Task<List<Products>> GetAllAsync()
+        {
+            var products = await _productRepository.GetAllAsync();
+            return products;
+        }
+
         public async Task<ProductDTO> GetByIdAsync(int id)
         {
             var product = await _productRepository.GetByIdAsync(id);
@@ -75,6 +81,6 @@ namespace Minha_primeira_API.Services
             }
 
             await _productRepository.UpdateByIdAsync(id, newproductc);
-        }
+        }       
     }
 }

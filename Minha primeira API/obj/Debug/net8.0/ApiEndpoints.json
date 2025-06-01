@@ -69,6 +69,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Minha_primeira_API.Controller.ProductsController",
+    "Method": "GetAllAsync",
+    "RelativePath": "products/listProducts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Minha_primeira_API.Controller.UsersController",
     "Method": "GetByIdAsync",
     "RelativePath": "Users/{id}",
@@ -135,6 +145,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minha_primeira_API.Controller.UsersController",
+    "Method": "GetAllAsync",
+    "RelativePath": "Users/listusers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

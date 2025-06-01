@@ -58,5 +58,16 @@ namespace Minha_primeira_API.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task<List<Users>> GetAllAsync()
+        {
+            var users = await _context.Users.ToListAsync();
+
+            if (users == null || !users.Any())
+            {
+                throw new Exception("Não encontrado");
+            }
+
+            return users;
+        }
     }
 }

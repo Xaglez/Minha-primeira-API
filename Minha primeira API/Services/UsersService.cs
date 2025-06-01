@@ -88,5 +88,11 @@ namespace Minha_primeira_API.Services
 
             await _usersRepository.UpdateByIdAsync(user, newUser);
         }
+
+        public async Task<List<Users>> GetAllAsync()
+        {
+            var users = await _usersRepository.GetAllAsync();
+            return users;
+        }
     }
 }

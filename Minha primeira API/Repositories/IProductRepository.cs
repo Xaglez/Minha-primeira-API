@@ -9,5 +9,6 @@ namespace Minha_primeira_API.Repositories
         Task<Products> GetByIdAsync(int id);
         Task UpdateByIdAsync(int id, Products newproductc);
         Task DeleteByIdAsync(Products product);
+        Task <List<Products>> GetAllAsync();
     }
 }

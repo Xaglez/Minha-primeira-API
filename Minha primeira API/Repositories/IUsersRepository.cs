@@ -10,5 +10,6 @@ namespace Minha_primeira_API.Repositories
         Task DeleteByIdAsync(Users users);
         Task BecomeAdmin(Users user);
         Task<Users?> GetByNameAsync(string name);
+        Task<List<Users>> GetAllAsync();
     }
 }

@@ -11,5 +11,6 @@ namespace Minha_primeira_API.Services
         Task BecomeAdmin(int id);
         Task<string> AuthenticateAsync(int id);
         Task<Users?> GetByNameAsync(string name);
+        Task<List<Users>> GetAllAsync();
     }
 }

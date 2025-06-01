@@ -26,6 +26,18 @@ namespace Minha_primeira_API.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
+        public async Task<List<Products>> GetAllAsync()
+        {
+           var products = await _dbContext.Products.ToListAsync();
+
+            if (products == null || !products.Any())
+            {
+                throw new Exception("Não foi possivél encontrar produtos");
+            }
+
+            return products;
+        }
+
         public async Task<Products> GetByIdAsync(int id)
         {
 

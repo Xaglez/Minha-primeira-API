@@ -17,6 +17,19 @@ namespace Minha_primeira_API.Controller
             _productService = productService;
         }
 
+        [Authorize]
+        [HttpGet]
+        [Route("listProducts")]
+        public async Task<IActionResult> GetAllAsync()
+        {
+            var products = await _productService.GetAllAsync();
+            if (products == null || !products.Any())
+            {
+                return NotFound("Nenhum produto encontrado.");
+            }
+            return Ok(products);
+        }
+
         [Authorize(Policy = "AdminPolicy")]
         [HttpPost]
         [Route ("createProducts")]

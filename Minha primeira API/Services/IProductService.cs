@@ -9,5 +9,6 @@ namespace Minha_primeira_API.Services
         Task<ProductDTO> GetByIdAsync(int id);
         Task UpdateByIdAsync(int id, Products newproductc);
         Task DeleteByIdAsync(int id);
+        Task<List<Products>> GetAllAsync();
     }
 }

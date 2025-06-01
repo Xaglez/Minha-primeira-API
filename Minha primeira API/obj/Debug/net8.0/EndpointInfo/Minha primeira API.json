@@ -5,6 +5,18 @@
     "version": "v1"
   },
   "paths": {
+    "/products/listProducts": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/products/createProducts": {
       "post": {
         "tags": [
@@ -121,6 +133,18 @@
       }
     },
     "/Users/profile": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Users/listusers": {
       "get": {
         "tags": [
           "Users"
