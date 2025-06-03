@@ -399,6 +399,10 @@
         "additionalProperties": false
       },
       "UpdateUsersRequest": {
+        "required": [
+          "email",
+          "password"
+        ],
         "type": "object",
         "properties": {
           "email": {
