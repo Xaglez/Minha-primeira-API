@@ -7,7 +7,7 @@ using Minha_primeira_API.Services;
 namespace Minha_primeira_API.Controller
 {
     [ApiController]
-    [Route("products")]
+    [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
@@ -47,6 +47,7 @@ namespace Minha_primeira_API.Controller
             
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {

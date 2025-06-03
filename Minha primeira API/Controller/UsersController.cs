@@ -1,21 +1,20 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Minha_primeira_API.DTOs;
 using Minha_primeira_API.Models;
 using Minha_primeira_API.Services;
 
 namespace Minha_primeira_API.Controller
 {
     [ApiController]
-    [Route("Users")]
+    [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
         private readonly IUsersService _usersService;
-        private readonly ITokenService _tokenService;
 
-        public UsersController(IUsersService usersService, ITokenService tokenService)
+        public UsersController(IUsersService usersService)
         {
             _usersService = usersService;
-            _tokenService = tokenService;
         }
 
         [Authorize(Policy = "AdminPolicy")]
@@ -37,35 +36,7 @@ namespace Minha_primeira_API.Controller
             return Ok(users);
         }
 
-        [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] Users model)
-        {
-            if (string.IsNullOrEmpty(model.Name))
-            {
-                return BadRequest(new { message = "Nome vazio." });
-            }
-
-            var user = await _usersService.GetByNameAsync(model.Name);
-
-            if (user == null)
-            {
-                return NotFound(new { message = "Usuário não encontrado." });
-            }
-
-            if (user.Password != model.Password)
-            {
-                return BadRequest(new { message = "Senha incorreta." });
-            }
-
-            var token = _tokenService.GenerateToken(user);
-
-            return Ok(new
-            {
-                user = new { user.Id, user.Name, user.IsAdmin },
-                token = token
-            });
-        }
-
+        [Authorize(Policy = "AdminPolicy")]
         [HttpPost]
         [Route("createusers")]
         public async Task<IActionResult> CreateUserAsync([FromBody] Users user)
@@ -82,6 +53,7 @@ namespace Minha_primeira_API.Controller
 
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
@@ -90,14 +62,24 @@ namespace Minha_primeira_API.Controller
             return Ok(product);
         }
 
+        [Authorize]
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateByIdAsync(int id, [FromBody] Users newUser)
+        public async Task<IActionResult> UpdateByIdAsync(int id, [FromBody] UpdateUsersRequest newUser)
         {
-            await _usersService.UpdateByIdAsync(id, newUser);
+            var user = await _usersService.GetByIdAsync(id);
+
+            if (user == null)
+                return NotFound("Usuário não encontrado");
+
+            user.Password = newUser.Password;
+            user.Email = newUser.Email;
+
+            await _usersService.UpdateAsync(user);
 
             return NoContent();
         }
 
+        [Authorize(Policy = "AdminPolicy")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteByIdAsync(int id)
         {

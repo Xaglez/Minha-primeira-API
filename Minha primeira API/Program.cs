@@ -89,6 +89,8 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IUsersService, UsersService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<TokenService>();
+
 
 
 var app = builder.Build();

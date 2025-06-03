@@ -6,7 +6,7 @@ namespace Minha_primeira_API.Services
     {
         Task CreateUserAsync(Users users);
         Task<Users> GetByIdAsync(int id);
-        Task UpdateByIdAsync(int id, Users newUser);
+        Task UpdateAsync(Users newUser);
         Task DeleteByIdAsync(int id);
         Task BecomeAdmin(int id);
         Task<string> AuthenticateAsync(int id);

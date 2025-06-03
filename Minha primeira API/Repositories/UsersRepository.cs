@@ -51,11 +51,34 @@ namespace Minha_primeira_API.Repositories
 
         }
 
-        public async Task UpdateByIdAsync(Users user, Users newUsers)
+        public async Task UpdateAsync(Users user)
         {
-            user.Name = newUsers.Name;
-            user.Password = newUsers.Password;
+            if (user == null)
+            {
+                throw new Exception("Não encontrado");
+            }
+
+            _context.Users.Update(user);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<Users> GetByEmailAndPasswordAsync(string email, string password)
+        {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                throw new ArgumentException("Email e senha não podem ser vazios.");
+            }
+
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
+        }
+
+        public async Task<Users> GetByEmailAsync(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                throw new ArgumentException("Email não pode ser vazio.");
+            }
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         }
 
         public async Task<List<Users>> GetAllAsync()

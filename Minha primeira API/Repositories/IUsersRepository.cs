@@ -6,10 +6,12 @@ namespace Minha_primeira_API.Repositories
     {
         Task CreateUserAsync(Users users);
         Task<Users> GetByIdAsync(int id);
-        Task UpdateByIdAsync(Users user, Users newUsers);
+        Task UpdateAsync(Users user);
         Task DeleteByIdAsync(Users users);
         Task BecomeAdmin(Users user);
         Task<Users?> GetByNameAsync(string name);
         Task<List<Users>> GetAllAsync();
+        Task<Users> GetByEmailAndPasswordAsync(string email, string password);
+        Task<Users> GetByEmailAsync(string email);
     }
 }

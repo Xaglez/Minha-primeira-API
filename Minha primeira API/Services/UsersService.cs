@@ -77,16 +77,15 @@ namespace Minha_primeira_API.Services
             return user;
         }
 
-        public async Task UpdateByIdAsync(int id, Users newUser)
+        public async Task UpdateAsync(Users newUser)
         {
-            var user = await _usersRepository.GetByIdAsync(id);
 
-            if (user == null)
+            if (newUser == null)
             {
                 throw new Exception("Não encontrado");
             }
 
-            await _usersRepository.UpdateByIdAsync(user, newUser);
+            await _usersRepository.UpdateAsync(newUser);
         }
 
         public async Task<List<Users>> GetAllAsync()
