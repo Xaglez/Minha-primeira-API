@@ -10,16 +10,24 @@ namespace Minha_primeira_API.Services
 {
     public class TokenService : ITokenService
     {
+        private readonly ILogger<TokenService> _logger;
+
+        public TokenService(ILogger<TokenService> logger)
+            => _logger = logger;
+
         public string GenerateToken(Users user)
         {
+            _logger.LogInformation("Gerando token para o usuário: {UserId}", user?.Id);
 
             if (user == null)
             {
+                _logger.LogError("Usuário é nulo ao tentar gerar token.");
                 throw new Exception("Usuário vázio");
             }
 
             if (string.IsNullOrEmpty(user.Name))
             {
+                _logger.LogError("Nome do usuário é vazio ao tentar gerar token.");
                 throw new Exception("Nome vázio");
             }
 
@@ -27,6 +35,7 @@ namespace Minha_primeira_API.Services
             
             if (secretKey == null )
             {
+                _logger.LogError("JWT_SECRET_KEY não foi configurada.");
                 throw new Exception("Insira a secret key");
             }
 
@@ -46,24 +55,31 @@ namespace Minha_primeira_API.Services
 
             var token = tokenHandler.CreateToken(tokenDescripitor);
 
+            _logger.LogInformation("Token gerado com sucesso para o usuário: {UserId}", user.Id);
             return  tokenHandler.WriteToken(token);
         }
 
         public string GenereteRefreshToken()
         {
+            _logger.LogInformation("Gerando Refresh Token.");
             var numeroAleatorio = new byte[32];
             using var rng = RandomNumberGenerator.Create();
             rng.GetBytes(numeroAleatorio);
+            _logger.LogInformation("Refresh Token gerado com sucesso.");
             return Convert.ToBase64String(numeroAleatorio);
         }
 
         public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
         {
+            _logger.LogInformation("Validando token expirado.");
             var secretKey = Environment.GetEnvironmentVariable("JWT_SECRET_KEY");
 
             if (string.IsNullOrEmpty(secretKey))
+            {
+                _logger.LogError("JWT_SECRET_KEY não foi configurada.");
                 throw new InvalidOperationException("JWT_SECRET_KEY não foi configurada.");
-
+            }
+                
             var key = Encoding.ASCII.GetBytes(secretKey);
 
             var tokenValidationParameters = new TokenValidationParameters
@@ -82,6 +98,7 @@ namespace Minha_primeira_API.Services
                 !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
                 throw new SecurityTokenException("Token inválido");
 
+            _logger.LogInformation("Token expirado validado com sucesso.");
             return principal;
         }
     }

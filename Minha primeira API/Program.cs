@@ -11,6 +11,18 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirFrontend",
+        builder =>
+        {
+            builder
+                .WithOrigins("http://127.0.0.1:5500")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
+
 new EnvLoader().Load();
 
 var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
@@ -53,7 +65,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Minha Primeira API", Version = "v1" });
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "API Comercio", Version = "v2" });
 
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -103,6 +115,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors("PermitirFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
 
