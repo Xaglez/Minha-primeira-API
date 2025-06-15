@@ -17,7 +17,7 @@ namespace Minha_primeira_API.Services
 
         public string GenerateToken(Users user)
         {
-            _logger.LogInformation("Gerando token para o usuário: {UserId}", user?.Id);
+            _logger.LogInformation("Gerando token para o usuário: {UserId}", user?.UserId);
 
             if (user == null)
             {
@@ -45,7 +45,7 @@ namespace Minha_primeira_API.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                    new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
                     new Claim(ClaimTypes.Name, user.Email),
                     new Claim("IsAdmin", user.IsAdmin.ToString())
                 }),
@@ -55,7 +55,7 @@ namespace Minha_primeira_API.Services
 
             var token = tokenHandler.CreateToken(tokenDescripitor);
 
-            _logger.LogInformation("Token gerado com sucesso para o usuário: {UserId}", user.Id);
+            _logger.LogInformation("Token gerado com sucesso para o usuário: {UserId}", user.UserId);
             return  tokenHandler.WriteToken(token);
         }
 

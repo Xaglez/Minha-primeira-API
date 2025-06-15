@@ -23,5 +23,6 @@ namespace Minha_primeira_API.Models
         [Required(ErrorMessage = "Campo Obrigatorio")]
         [Column(TypeName = "DECIMAL(10,2)")]
         public decimal Price { get; set; }
+
     }
 }

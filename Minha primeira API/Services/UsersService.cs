@@ -36,7 +36,7 @@ namespace Minha_primeira_API.Services
 
             var user = await _usersRepository.GetByIdAsync(id);
 
-            if (user == null || user.Id != id)
+            if (user == null || user.UserId != id)
             {
                 _logger.LogError("Usuário com ID {Id} não encontrado.", id);
                 throw new UnauthorizedAccessException("Id inválido");

@@ -8,7 +8,7 @@ namespace Minha_primeira_API.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int UserId { get; set; }
 
         [Required(ErrorMessage = "Insira um nome")]
         [StringLength(150, ErrorMessage = "Caracteres máximo não pode ser maior que 150")]
@@ -28,5 +28,7 @@ namespace Minha_primeira_API.Models
         public string? RefreshToken { get; set; }
         
         public DateTime RefreshTokenExpiryTime { get; set; }
+
+        public List<Venda> Vendas { get; set; }
     }
 }
