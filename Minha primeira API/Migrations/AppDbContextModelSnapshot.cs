@@ -48,7 +48,7 @@ namespace Minha_primeira_API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Minha_primeira_API.Models.Users", b =>
@@ -85,7 +85,7 @@ namespace Minha_primeira_API.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Minha_primeira_API.Models.Venda", b =>
@@ -120,7 +120,7 @@ namespace Minha_primeira_API.Migrations
 
                     b.HasIndex("UsersUserId");
 
-                    b.ToTable("Vendas");
+                    b.ToTable("Vendas", (string)null);
                 });
 
             modelBuilder.Entity("Minha_primeira_API.Models.Venda", b =>
