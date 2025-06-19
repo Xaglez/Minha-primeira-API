@@ -39,7 +39,7 @@ namespace Minha_primeira_API.Controller
         [Authorize(Policy = "AdminPolicy")]
         [HttpPost]
         [Route("createusers")]
-        public async Task<IActionResult> CreateUserAsync([FromBody] Users user)
+        public async Task<IActionResult> CreateUserAsync(NewUsers user)
         {
             try
             {

@@ -284,7 +284,7 @@
     "Parameters": [
       {
         "Name": "user",
-        "Type": "Minha_primeira_API.Models.Users",
+        "Type": "Minha_primeira_API.DTOs.NewUsers",
         "IsRequired": true
       }
     ],

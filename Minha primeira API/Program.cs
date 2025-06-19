@@ -68,7 +68,11 @@ builder.Services.AddControllers()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo { Title = "API Comercio", Version = "v2" });
+    options.SwaggerDoc("comercio-v2", new OpenApiInfo
+    {
+        Title = "API Comércio",
+        Version = "v2",
+});
 
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -115,7 +119,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(); 
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/comercio-v2/swagger.json", "API Comércio v2");
+    });
 }
 
 app.UseHttpsRedirection();

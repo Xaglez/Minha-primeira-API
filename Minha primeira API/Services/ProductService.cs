@@ -1,8 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Minha_primeira_API.DTOs;
+﻿using Minha_primeira_API.DTOs;
 using Minha_primeira_API.Models;
 using Minha_primeira_API.Repositories;
-using System.Data;
+
 
 namespace Minha_primeira_API.Services
 {

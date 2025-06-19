@@ -1,6 +1,7 @@
 ﻿using Minha_primeira_API.Models;
 using Minha_primeira_API.Repositories;
 using Microsoft.Extensions.Logging;
+using Minha_primeira_API.DTOs;
 
 namespace Minha_primeira_API.Services
 {
@@ -62,7 +63,7 @@ namespace Minha_primeira_API.Services
             await _usersRepository.BecomeAdmin(user);
         }
 
-        public async Task CreateUserAsync(Users users)
+        public async Task CreateUserAsync(NewUsers users)
         {
             _logger.LogInformation("Criando novo usuário: {User}", users);
             if (users == null)
@@ -71,7 +72,15 @@ namespace Minha_primeira_API.Services
                 throw new Exception("Não encontrado");
             }
 
-            await _usersRepository.CreateUserAsync(users);
+            var Newusers = new Users
+            {
+                Name = users.Name,
+                Email = users.Email,
+                Password = users.Password,
+                IsAdmin = users.IsAdmin
+            };
+
+            await _usersRepository.CreateUserAsync(Newusers);
         }
 
         public async Task DeleteByIdAsync(int id)

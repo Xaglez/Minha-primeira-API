@@ -36,6 +36,7 @@ namespace Minha_primeira_API.Controller
             }
         }
 
+        [Authorize]
         [HttpPost("createSale")]
         public async Task<IActionResult> CreateSaleAsync([FromBody] CreateSaleDTO dto)
         {
