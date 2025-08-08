@@ -36,10 +36,13 @@ namespace Minha_primeira_API.Controller
             usuario.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
             await _usuarioRepository.UpdateAsync(usuario);
 
-            return Ok(new
+            return Ok(new LoginResponse
             {
                 Token = token,
-                RefreshToken = refreshToken
+                RefreshToken = refreshToken,
+                Name = usuario.Name,
+                IsAdmin = usuario.IsAdmin,
+                Id = usuario.UserId
             });
         }
 

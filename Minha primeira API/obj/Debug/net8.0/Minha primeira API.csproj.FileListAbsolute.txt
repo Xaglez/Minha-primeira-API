@@ -140,12 +140,6 @@ C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\staticwebassets\msbuild.Minha primeira API.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\staticwebassets\msbuild.Minha primeira API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\staticwebassets\msbuild.build.Minha primeira API.props
-C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Minha primeira API.props
-C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Minha primeira API.props
-C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\Minha pr.3E610E38.Up2Date
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\Minha primeira API.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\refint\Minha primeira API.dll
@@ -153,3 +147,8 @@ C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\Minha primeira API.genruntimeconfig.cache
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\ref\Minha primeira API.dll
 C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\paulo\source\repos\Minha primeira API\Minha primeira API\obj\Debug\net8.0\staticwebassets.build.json.cache
