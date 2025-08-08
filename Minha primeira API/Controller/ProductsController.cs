@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Minha_primeira_API.Models;
 using Minha_primeira_API.Services;
@@ -7,32 +6,19 @@ using Minha_primeira_API.Services;
 namespace Minha_primeira_API.Controller
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("v1")]
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
 
-        public ProductsController(IProductService productService)
-        {
+        public ProductsController(IProductService productService) {
+
             _productService = productService;
+
         }
 
-        [Authorize]
-        [HttpGet]
-        [Route("listProducts")]
-        public async Task<IActionResult> GetAllAsync()
-        {
-            var products = await _productService.GetAllAsync();
-            if (products == null || !products.Any())
-            {
-                return NotFound("Nenhum produto encontrado.");
-            }
-            return Ok(products);
-        }
-
-        [Authorize(Policy = "AdminPolicy")]
         [HttpPost]
-        [Route ("createProducts")]
+        [Route ("products")]
         public async Task<IActionResult> CreateProductAsync([FromBody]Products products)
         {
             try
@@ -47,7 +33,6 @@ namespace Minha_primeira_API.Controller
             
         }
 
-        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
@@ -56,7 +41,6 @@ namespace Minha_primeira_API.Controller
             return Ok(product);
         }
 
-        [Authorize(Policy = "AdminPolicy")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateByIdAsync(int id, [FromBody] Products newproductc)
         {
@@ -65,8 +49,7 @@ namespace Minha_primeira_API.Controller
             return NoContent();
         }
 
-        [Authorize(Policy = "AdminPolicy")]
-        [HttpDelete("{id}")]
+        [HttpDelete("id")]
         public async Task<IActionResult> DeleteByIdAsync(int id)
         {
             await _productService.DeleteByIdAsync(id);

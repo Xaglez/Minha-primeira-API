@@ -11,23 +11,5 @@ namespace Minha_primeira_API.Data
         }
 
         public DbSet<Products> Products { get; set; }
-
-        public DbSet<Users> Users { get; set; }
-
-        public DbSet<Venda> Vendas { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Venda>()
-                .HasOne(v => v.Users)
-                .WithMany(u => u.Vendas)
-                .HasForeignKey(v => v.UserId);
-
-            modelBuilder.Entity<Venda>()
-                .Property<int>("UserId")
-                .HasColumnName("UserId"); 
-
-        }
-
     }
 }

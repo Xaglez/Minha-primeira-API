@@ -16,6 +16,3 @@
 
 # Ignore arquivos de índice do Visual Studio
 *.vsidx
-
-# Arquivo de variáveis de ambiente
-.env
